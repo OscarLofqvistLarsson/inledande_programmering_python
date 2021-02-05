@@ -1,0 +1,96 @@
+inledande programmering python Assignment 3: File IO and Data Structures
+
+Exercise 1
+Write a program count_io_entities.py containing two functions count_directories(dir_path) and count_py_files(dir_path).
+
+    The function count_directories(dir_path) should return a count (an integer) of the number of subdirectories to the directory specified by dir_path.
+    The function count_py_files(dir_path) should return a count (an integer) of the number Python files (ending with .py) in the directory specified by dir_path.
+
+Also, add the following program code to verify that it works
+
+     path = ...          # Path pointing to directory containing other directories
+     print("Dir Count:", count_directories(path))
+     
+     
+     path = ...          # Path pointing to directory containing .py files
+     print("Py-file Count:", count_py_files(path))
+     
+
+Exercise 2
+Write a program read_write.py containing two functions read_file(file_path) and write_file(lines, file_path).
+
+    The function read_file(file_path) should read the file specified by file_path and return a list of strings containing each line in the file.
+    The function write_file(lines, file_path) should write (line by line) the content of the list lines to the a file specified by file_path.
+
+When used one after another (first read, then write) the output file should be an exact copy of input file (formatting and all).
+
+Exercise 3
+You can here download two files each containing 10000 integer values. The main difference between the two files is how the integers are formatted in the file.
+
+Write a program read_numbers.py that reads the two files (one after each other) and for each file computes and presents the average (mean) value and the standard deviation. We expect two separate functions mean(lst) and std(lst) that computes the mean and standard deviation for a given list of integers lst. Here you can find more information about the standard deviation.
+
+If time permits (Required for grades A and B)
+
+Exercise 4
+It has been a lot of programming in this course. But how many lines of Python code have you actually written?
+
+Write a program count_lines.py containing a function count_py_lines(dir_path) returning a count (an integer) of all the non-empty lines in all Python files (ending with .py) in the directory specified by dir_path and all its subdirectories (transitively).
+
+Hence, it should give a py-line count when applied to your home directory for this course .../1DV501 in the following way:
+
+     path = ...          # Path pointing to your 1DV501 (or 1DT901) Python directory 
+     print("Python Line Count:", count_py_lines(path))
+     
+
+Hint: Use recursion. 
+
+Lecture 8 - Tuples, sets, and dictionaries The Lecture 8 exercises are fewer and larger. Try to handle them using a small step approach where you divide the problem into several smaller problems which you solve one at the time. Test that each part works before you move on to the next one.
+
+Exercise 5
+In this exercise you should reuse the two integer files from Exercise 3.
+
+Write a program count_numbers.py with two functions count_different(lst) and count_occurrences(lst) such that:
+
+    count_different(lst) counts (and returns) the number of different integers in the list lst using a set.
+    count_occurrences(lst) returns a dictionary (number and count) containing the number of times each integer occurs the list lst. 
+
+Also, write program code that for each integer file:
+
+    Reads all integers in the file
+    Computes and presents the number of different integers using function count_different(lst),
+    Computes and presents (number and count) the most frequently occurring number using the dictionary returned from function count_occurrences(lst) 
+
+Hint: Start working with files containing much fewer integers allowing you to manually inspect the result!
+
+Exercise 6
+Knowing the character frequencies for a language has many important applications in cryptoanalysis.
+
+You can here download two large files containing English text:
+    holy_grail.txt containing the script of the Monty Python movie The Holy Grail. (It is a Python course after all!)
+    eng_news_100K-sentences.txt containing 100,000 sentences taken from English newspapers.
+
+Write a program letter_count.py that:
+    Reads a text file. Windows users having a problem reading these files can try to use open(..., encoding='utf-8') when reading the files.
+    Counts the number of times each letter (a-z, upper case letters are counted as lower case letters) is occurring in the file using a dictionary. Notice: Upper case letter are turned into lower case letters and you only need to count occurrences of the English letters abcdefghijklmnopqrstuvwxyz. Letters with accents and non-English letters can be ignored.
+    Displays a simple histogram (see example below) 
+Your program should be able to handle the two given text files. Would you say that the two files has the same character frequency?
+
+Reading text from the file: .../holy_grail.txt
+Total number of letters: ...
+
+Histogram (where each star represents XXX occurrences)
+a | ******
+b | ****
+c | **
+d | ***
+e | *******
+f | ****
+h | *** 
+...
+z | *      
+
+Notice: The above histogram is just fake showing what type of histogram we are looking for. It is not the result of a frequency analysis of the text in holy_grail.txt. Also, play around with different values of XXX to produce a nice looking histogram.
+
+Hint: Start working with much smaller text files allowing you to manually inspect the result!
+
+
